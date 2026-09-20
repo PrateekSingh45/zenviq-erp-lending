@@ -2,10 +2,29 @@
 
 ZENVIQ is a comprehensive, open-source Loan Management System (LMS) and Loan Origination System (LOS) built on the robust Frappe Framework. Designed specifically for NBFCs and Fintechs, it provides an end-to-end digital lending operating system.
 
-## 📸 Dashboard Overview
-*(Add your screenshot here! Just name your image `screenshot.png`, place it in this folder, and push to GitHub).*
+## 📸 Platform Screenshots
 
-![ZENVIQ ERP Dashboard](screenshot.png)
+### 1. CEO / Executive Cockpit
+Real-time insights into AUM, Collection Efficiency, and Portfolio at Risk (PAR).
+![CEO Cockpit](images/ceo_cockpit.png)
+
+### 2. Analytics & Origination Funnel
+Visual breakdown of asset allocation and digital conversion metrics from Lead to Closure.
+![Dashboard Charts](images/dashboard_charts.png)
+
+### 3. Delinquency Watchlist & RBI Compliance
+Automated tracking of NPA buckets (SMA-0, SMA-1, SMA-2) and RBI regulatory compliance status.
+![Delinquency Watchlist](images/delinquency_watchlist.png)
+
+### 4. Lending Leads Management
+Organized pipeline tracking for all inbound borrower applications.
+![Lending Leads](images/lending_leads.png)
+
+### 5. ZENVIQ Lending Suite Overview
+The complete suite of modules including eKYC, Underwriting, eSign, Disbursement, and Collections.
+![Module Overview](images/module_overview.png)
+
+---
 
 ## 🚀 Key Features
 *   **Instant Onboarding**: RBI-compliant eKYC, PAN validation, and CIBIL integration.
