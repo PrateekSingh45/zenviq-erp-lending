@@ -1,0 +1,17 @@
+{
+  "name": "KYC Document Item",
+  "module": "ZENVIQ Lending",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "istable": 1,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "fields": [
+    {"fieldname": "document_type", "fieldtype": "Select", "label": "Document Type", "options": "\nAadhaar Card\nPAN Card\nVoter ID\nPassport\nDriving License\nBank Statement\nSalary Slip\nITR\nUtility Bill\nRent Agreement\nProperty Documents", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "document_number", "fieldtype": "Data", "label": "Document Number", "in_list_view": 1},
+    {"fieldname": "document_file", "fieldtype": "Attach", "label": "Upload Document", "in_list_view": 1},
+    {"fieldname": "verified", "fieldtype": "Check", "label": "Verified", "in_list_view": 1, "default": 0},
+    {"fieldname": "verification_remarks", "fieldtype": "Small Text", "label": "Remarks"}
+  ],
+  "permissions": []
+}

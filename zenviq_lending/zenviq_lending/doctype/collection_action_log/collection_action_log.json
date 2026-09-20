@@ -1,0 +1,17 @@
+{
+  "name": "Collection Action Log",
+  "module": "ZENVIQ Lending",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "istable": 1,
+  "editable_grid": 1,
+  "track_changes": 0,
+  "fields": [
+    {"fieldname": "action_date", "fieldtype": "Date", "label": "Date", "default": "Today", "in_list_view": 1},
+    {"fieldname": "action_type", "fieldtype": "Select", "label": "Action Type", "options": "\nPhone Call\nSMS\nEmail\nField Visit\nLegal Notice\nWhatsApp", "in_list_view": 1},
+    {"fieldname": "action_detail", "fieldtype": "Small Text", "label": "Details", "in_list_view": 1},
+    {"fieldname": "action_by", "fieldtype": "Link", "label": "Action By", "options": "User", "in_list_view": 1},
+    {"fieldname": "result", "fieldtype": "Select", "label": "Result", "options": "\nConnected\nNot Reachable\nNo Answer\nPromised Payment\nRefused\nDisconnected", "in_list_view": 1}
+  ],
+  "permissions": []
+}
