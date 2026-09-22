@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "AI-REQ-.YYYY.-.#####",
+ "creation": "2026-09-22 14:20:47.798948",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "request_id",
+  "requested_by",
+  "prompt",
+  "intent",
+  "risk_level",
+  "status",
+  "requires_approval",
+  "approved_by",
+  "approved_at",
+  "affected_doctypes",
+  "change_plan_json",
+  "verification_result_json",
+  "rollback_payload_json",
+  "error_log",
+  "model_provider",
+  "model_name",
+  "model_response_id",
+  "operations"
+ ],
+ "fields": [
+  {
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Request ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested By",
+   "options": "User"
+  },
+  {
+   "fieldname": "prompt",
+   "fieldtype": "Text",
+   "label": "Prompt"
+  },
+  {
+   "fieldname": "intent",
+   "fieldtype": "Data",
+   "label": "Detected Intent"
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Risk Level",
+   "options": "GREEN\nYELLOW\nRED"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPlanned\nAwaiting Approval\nApproved\nExecuting\nCompleted\nFailed\nRolled Back"
+  },
+  {
+   "default": "0",
+   "fieldname": "requires_approval",
+   "fieldtype": "Check",
+   "label": "Requires Approval"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_at",
+   "fieldtype": "Datetime",
+   "label": "Approved At"
+  },
+  {
+   "fieldname": "affected_doctypes",
+   "fieldtype": "Text",
+   "label": "Affected DocTypes"
+  },
+  {
+   "fieldname": "change_plan_json",
+   "fieldtype": "Code",
+   "label": "Change Plan",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "verification_result_json",
+   "fieldtype": "Code",
+   "label": "Verification Result",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "rollback_payload_json",
+   "fieldtype": "Code",
+   "label": "Rollback Payload",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Text",
+   "label": "Error Log"
+  },
+  {
+   "fieldname": "model_provider",
+   "fieldtype": "Data",
+   "label": "Model Provider"
+  },
+  {
+   "fieldname": "model_name",
+   "fieldtype": "Data",
+   "label": "Model Name"
+  },
+  {
+   "fieldname": "model_response_id",
+   "fieldtype": "Data",
+   "label": "Model Response ID"
+  },
+  {
+   "fieldname": "operations",
+   "fieldtype": "Table",
+   "label": "Operations",
+   "options": "AI Change Operation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-22 14:36:21.197608",
+ "modified_by": "Administrator",
+ "module": "ZENVIQ AI",
+ "name": "AI Change Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -4,7 +4,7 @@
   "docstatus": 0,
   "doctype": "Page",
   "idx": 0,
-  "modified": "2026-09-07 12:00:00.000000",
+  "modified": "2026-09-22 18:00:00.000000",
   "modified_by": "Administrator",
   "module": "ZENVIQ Lending",
   "name": "owner-cockpit",
@@ -12,18 +12,15 @@
   "page_name": "owner-cockpit",
   "roles": [
     {
-      "role": "Lending Admin"
-    },
-    {
-      "role": "Branch Manager Lending"
-    },
-    {
       "role": "System Manager"
+    },
+    {
+      "role": "All"
     }
   ],
   "script": null,
   "standard": "Yes",
   "style": null,
   "system_page": 0,
-  "title": "ZENVIQ Executive Owner Cockpit"
+  "title": "ZENVIQ Insights"
 }

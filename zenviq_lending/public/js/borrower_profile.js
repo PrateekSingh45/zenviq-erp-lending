@@ -1,75 +1,48 @@
-frappe.ui.form.on("Borrower Profile", {
+frappe.ui.form.on('Borrower Profile', {
     refresh: function(frm) {
-        if (!frm.is_new()) {
-            // Action buttons
-            frm.add_custom_button(__("Fetch CIBIL (Sandbox)"), function() {
-                frappe.show_alert({message: __("Connecting to CIBIL Bureau API (Sandbox)..."), indicator: "orange"});
-                frm.call({
-                    method: "fetch_credit_score",
-                    doc: frm.doc,
-                    freeze: true,
-                    freeze_message: __("Pulling Credit Score & Trade Lines..."),
-                    callback: function(r) {
-                        frm.reload_doc();
-                        frappe.msgprint({
-                            title: __("CIBIL Report Retrieved"),
-                            message: __("<b>Credit Score:</b> " + frm.doc.credit_score + "<br><b>Risk Category:</b> " + frm.doc.risk_category + "<br><b>Active Loan Accounts:</b> " + (frm.doc.existing_loan_count || 0)),
-                            indicator: "green"
-                        });
-                    }
-                });
-            }, __("Verifications"));
+        frm.page.wrapper.find('.page-body').css('padding-top', '0');
 
-            frm.add_custom_button(__("Verify Aadhaar eKYC"), function() {
-                frm.call({
-                    method: "run_ekyc_aadhaar",
-                    doc: frm.doc,
-                    freeze: true,
-                    freeze_message: __("Verifying Aadhaar with UIDAI Gateway..."),
-                    callback: function(r) {
-                        frm.reload_doc();
-                    }
-                });
-            }, __("Verifications"));
+        if (frm.layout.wrapper.find('.z-crm-header').length === 0) {
+            var statusText = frm.doc.status || 'Active';
+            var statusBg = statusText === 'Active' ? '#EAF2ED' : '#EFEDE8';
+            var statusColor = statusText === 'Active' ? '#24674B' : '#5F5C57';
 
-            frm.add_custom_button(__("Verify PAN NSDL"), function() {
-                frm.call({
-                    method: "verify_pan",
-                    doc: frm.doc,
-                    freeze: true,
-                    freeze_message: __("Validating PAN with Income Tax DB..."),
-                    callback: function(r) {
-                        frm.reload_doc();
-                    }
-                });
-            }, __("Verifications"));
-
-            // Fast navigation
-            frm.add_custom_button(__("New Loan Application"), function() {
-                frappe.new_doc("Loan Application", {
-                    applicant: frm.doc.customer || "",
-                    applicant_name: frm.doc.full_name,
-                    company: "ZENVIQ Finance Demo Private Limited"
-                });
-            }, __("Quick Actions"));
-
-            frm.add_custom_button(__("New Credit Assessment"), function() {
-                frappe.new_doc("Credit Assessment", {
-                    borrower_profile: frm.doc.name,
-                    declared_monthly_income: frm.doc.monthly_income,
-                    verified_monthly_income: frm.doc.monthly_income,
-                    existing_emi: frm.doc.existing_emi_total || 0,
-                    credit_score: frm.doc.credit_score || 720
-                });
-            }, __("Quick Actions"));
-
-            frm.add_custom_button(__("New KYC Record"), function() {
-                frappe.new_doc("KYC Verification", {
-                    borrower_profile: frm.doc.name,
-                    aadhaar_number: frm.doc.aadhaar_number,
-                    pan_number: frm.doc.pan_number
-                });
-            }, __("Quick Actions"));
+            var crm_header = $(`
+                <div class="z-crm-header" style="
+                    background: transparent;
+                    padding: 0 0 20px 0;
+                    margin-bottom: 28px;
+                    border-bottom: 1px solid var(--z-border, #E5E2DB);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                ">
+                    <div>
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                            <h2 style="margin:0;font-size:22px;font-weight:600;color:#1E1E1C;">
+                                ${frm.doc.first_name || ''} ${frm.doc.last_name || ''}
+                            </h2>
+                            <span style="
+                                background:${statusBg};color:${statusColor};
+                                padding:2px 8px;border-radius:4px;
+                                font-size:12px;font-weight:500;
+                            ">${statusText}</span>
+                        </div>
+                        <div style="font-size:14px;color:#64615C;">
+                            ${frm.doc.name}
+                            &middot; ${frm.doc.risk_category || 'Low'} risk
+                            &middot; CIBIL ${frm.doc.cibil_score || 'N/A'}
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <button class="btn ai-btn" onclick="zenviq_toggle_ai_panel()" style="font-size:13px;">Ask ZENVIQ</button>
+                        <button class="btn btn-default" style="padding:0 8px!important;" onclick="frappe.msgprint('More actions')">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                        </button>
+                    </div>
+                </div>
+            `);
+            frm.layout.wrapper.prepend(crm_header);
         }
     }
 });

@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2026-09-22 14:43:49.739993",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-09-22 14:43:49.739993",
+ "modified_by": "Administrator",
+ "module": "ZENVIQ AI",
+ "name": "zenviq_ai_chat",
+ "owner": "Administrator",
+ "page_name": "zenviq_ai_chat",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "ZENVIQ AI"
+}

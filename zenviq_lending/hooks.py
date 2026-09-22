@@ -8,6 +8,10 @@ app_color = "#3F51B5"
 
 required_apps = ["erpnext", "lending"]
 
+# ZENVIQ Design System Overrides
+app_include_css = "/assets/zenviq_lending/css/zenviq_theme.css"
+app_include_js = "/assets/zenviq_lending/js/zenviq_shell.js"
+
 # Modules
 modules = [
 	{
@@ -38,4 +42,9 @@ scheduler_events = {
 		"zenviq_lending.tasks.flag_npa_loans",
 		"zenviq_lending.tasks.create_collection_tasks",
 	],
+}
+
+# DocType List JS
+doctype_list_js = {
+	"Loan Application": "public/js/loan_application_list.js"
 }

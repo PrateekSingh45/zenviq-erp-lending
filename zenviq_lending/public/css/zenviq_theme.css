@@ -1,0 +1,686 @@
+/* Extra aggressive background overrides */
+html, body, 
+html[data-theme="light"], body[data-theme="light"],
+[data-theme="light"] body,
+[data-theme="light"] .main-section,
+[data-theme="light"] .page-body,
+[data-theme="light"] #page-setup-wizard,
+[data-theme="light"] .container,
+.layout-main,
+.page-container {
+    background-color: #F5F4F0 !important;
+    background: #F5F4F0 !important;
+}
+
+[data-theme="light"] {
+    --bg-color: #F5F4F0 !important;
+    --page-bg: #F5F4F0 !important;
+    --body-bg: #F5F4F0 !important;
+}
+/* ==========================================================================
+   ZENVIQ FLOW DESIGN SYSTEM
+   Calm Productivity · Warm Neutrals · Typographic Hierarchy
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+    /* ── Shell ── */
+    --z-shell: #F5F4F0;
+    --z-shell-hover: #F1EFEA;
+    --z-shell-active: #ECE9E2;
+
+    /* ── Surfaces ── */
+    --z-surface: #FFFFFF;
+    --z-surface-soft: #FAF9F6;
+    --z-surface-metric: #F8F7F4;
+
+    /* ── Accent ── */
+    --z-accent: #6C5CE7;
+    --z-accent-deep: #5948D6;
+    --z-accent-soft: #F0EDFF;
+    --z-accent-ultra: #F7F5FF;
+
+    /* ── Secondary (Teal) ── */
+    --z-positive: #176B62;
+    --z-positive-soft: #E8F3EF;
+
+    /* ── Danger / Warning ── */
+    --z-danger: #97443D;
+    --z-danger-soft: #F8E9E7;
+    --z-warning: #7A6518;
+    --z-warning-soft: #F6F1DF;
+
+    /* ── Text ── */
+    --z-text: #1E1E1C;
+    --z-text-secondary: #64615C;
+    --z-text-muted: #8A8781;
+
+    /* ── Borders ── */
+    --z-border: #E5E2DB;
+    --z-border-subtle: rgba(30, 30, 28, 0.08);
+
+    /* ── Status ── */
+    --z-status-approved-bg: #E8F3EC;
+    --z-status-approved-text: #24724B;
+    --z-status-review-bg: #F6F1DF;
+    --z-status-review-text: #7A6518;
+    --z-status-rejected-bg: #F8E9E7;
+    --z-status-rejected-text: #97443D;
+    --z-status-active-bg: #EAF2ED;
+    --z-status-active-text: #24674B;
+    --z-status-neutral-bg: #EFEDE8;
+    --z-status-neutral-text: #5F5C57;
+
+    /* ── Geometry ── */
+    --z-radius-workspace: 24px;
+    --z-radius-card: 12px;
+    --z-radius-control: 8px;
+    --z-radius-button: 9px;
+    --z-radius-dialog: 16px;
+
+    /* ── Shadows ── */
+    --z-shadow-workspace: 0 1px 3px rgba(0,0,0,0.025);
+    --z-shadow-popover: 0 10px 35px rgba(0,0,0,0.08);
+    --z-shadow-dialog: 0 20px 60px rgba(0,0,0,0.12);
+
+    /* ── Motion ── */
+    --z-motion-fast: 150ms;
+    --z-motion-standard: 220ms;
+    --z-motion-drawer: 280ms;
+
+    /* ── Frappe Overrides ── */
+    --primary-color: #1D1D1B;
+    --bg-color: var(--z-shell);
+    --control-bg: var(--z-surface-soft);
+    --border-color: var(--z-border);
+    --text-color: var(--z-text);
+    --heading-text-color: var(--z-text);
+    --btn-height: 38px;
+    --input-height: 40px;
+}
+
+/* ==========================================================================
+   0. GLOBAL RESET & TYPOGRAPHY
+   ========================================================================== */
+
+body, html {
+    background-color: var(--z-shell) !important;
+    color: var(--z-text) !important;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ==========================================================================
+   1. HIDE FRAPPE CHROME
+   ========================================================================== */
+
+header.navbar,
+.navbar,
+.web-sidebar,
+.layout-side-section {
+    display: none !important;
+}
+
+/* ==========================================================================
+   2. SHELL BACKGROUND
+   ========================================================================== */
+
+.main-section,
+#body,
+.page-body,
+#page-setup-wizard,
+.container {
+    background-color: var(--z-shell) !important;
+}
+
+/* ==========================================================================
+   3. WORKSPACE CONTAINER — The large white rounded surface
+   ========================================================================== */
+
+.layout-main-section-wrapper {
+    margin-left: 250px !important;
+    background-color: transparent !important;
+    padding: 16px 16px 16px 0 !important;
+    min-height: 100vh;
+}
+
+.layout-main-section {
+    background-color: var(--z-surface) !important;
+    border: 1px solid var(--z-border-subtle) !important;
+    border-radius: var(--z-radius-workspace) !important;
+    box-shadow: var(--z-shadow-workspace) !important;
+    min-height: calc(100vh - 32px) !important;
+    padding: 44px 48px !important;
+}
+
+.page-container {
+    background: transparent !important;
+}
+
+/* ==========================================================================
+   4. CUSTOM SIDEBAR
+   ========================================================================== */
+
+#z-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: var(--z-shell);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 14px;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#z-sidebar-logo {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--z-text);
+    margin-bottom: 28px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.3px;
+}
+
+.z-nav-section {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--z-text-muted);
+    margin: 20px 0 6px 12px;
+    letter-spacing: 0.5px;
+}
+
+.z-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    color: var(--z-text-secondary) !important;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background var(--z-motion-fast) ease, color var(--z-motion-fast) ease;
+    text-decoration: none !important;
+    user-select: none;
+}
+
+.z-nav-item:hover {
+    background: rgba(0, 0, 0, 0.035);
+    color: var(--z-text) !important;
+    text-decoration: none !important;
+}
+
+.z-nav-item.active {
+    background: var(--z-shell-active);
+    color: var(--z-text) !important;
+    font-weight: 600;
+}
+
+/* User profile bottom area */
+.z-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--z-border);
+}
+
+.z-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background var(--z-motion-fast) ease;
+}
+.z-user-profile:hover {
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.z-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--z-shell-active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--z-text);
+    flex-shrink: 0;
+}
+
+.z-user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--z-text);
+    line-height: 1.3;
+}
+.z-user-role {
+    font-size: 12px;
+    color: var(--z-text-muted);
+}
+
+/* ==========================================================================
+   5. BUTTONS
+   ========================================================================== */
+
+.btn {
+    border-radius: var(--z-radius-button) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    height: var(--btn-height) !important;
+    transition: all var(--z-motion-fast) ease !important;
+    box-shadow: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px !important;
+    line-height: 1 !important;
+}
+
+/* Primary — dark business button */
+.btn-primary {
+    background: #1D1D1B !important;
+    color: #FFFFFF !important;
+    border: none !important;
+}
+.btn-primary:hover {
+    background: #000000 !important;
+}
+
+/* AI — purple */
+.btn-primary.ai-btn,
+.ai-btn {
+    background: var(--z-accent) !important;
+    color: #FFFFFF !important;
+}
+.btn-primary.ai-btn:hover,
+.ai-btn:hover {
+    background: var(--z-accent-deep) !important;
+}
+
+/* Secondary */
+.btn-default {
+    background: var(--z-surface) !important;
+    border: 1px solid var(--z-border) !important;
+    color: var(--z-text) !important;
+}
+.btn-default:hover {
+    background: var(--z-shell-hover) !important;
+}
+
+/* Small */
+.btn-xs, .btn-sm {
+    height: 30px !important;
+    font-size: 12px !important;
+    padding: 0 10px !important;
+}
+
+/* ==========================================================================
+   6. PAGE HEADERS
+   ========================================================================== */
+
+.page-head {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin-bottom: 32px !important;
+    position: relative !important;
+}
+
+.page-title .title-text {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: var(--z-text) !important;
+}
+
+/* ==========================================================================
+   7. TABS
+   ========================================================================== */
+
+.nav-tabs {
+    border-bottom: 1px solid var(--z-border) !important;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-tabs > li > a {
+    border: none !important;
+    background: transparent !important;
+    color: var(--z-text-muted) !important;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    transition: color var(--z-motion-fast) ease;
+}
+
+.nav-tabs > li > a:hover {
+    color: var(--z-text) !important;
+    background: transparent !important;
+}
+
+.nav-tabs > li.active > a {
+    color: #1F1F1D !important;
+    border-bottom: 2px solid #1F1F1D !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   8. LIST VIEWS
+   ========================================================================== */
+
+.frappe-list .list-row,
+.list-row {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--z-border) !important;
+    min-height: 54px;
+    padding: 10px 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.list-row-container {
+    border: none !important;
+    margin: 0 !important;
+    transition: background var(--z-motion-fast) ease;
+}
+.list-row-container:hover {
+    background-color: #F8F7F4 !important;
+}
+
+.list-row-head {
+    background: transparent !important;
+    border-bottom: 1px solid var(--z-border) !important;
+    color: var(--z-text-muted) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    padding: 10px 0 !important;
+    letter-spacing: 0;
+}
+
+.list-subject {
+    font-weight: 500;
+    color: var(--z-text);
+}
+
+/* Status indicators */
+.indicator-pill {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.indicator-pill.green {
+    background: var(--z-status-approved-bg) !important;
+    color: var(--z-status-approved-text) !important;
+}
+.indicator-pill.orange {
+    background: var(--z-status-review-bg) !important;
+    color: var(--z-status-review-text) !important;
+}
+.indicator-pill.red {
+    background: var(--z-status-rejected-bg) !important;
+    color: var(--z-status-rejected-text) !important;
+}
+.indicator-pill.blue {
+    background: var(--z-status-active-bg) !important;
+    color: var(--z-status-active-text) !important;
+}
+
+/* ==========================================================================
+   9. FORMS
+   ========================================================================== */
+
+.form-section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 40px !important;
+    border-radius: 0 !important;
+}
+
+.section-head {
+    border-bottom: 1px solid var(--z-border) !important;
+    padding: 0 0 10px 0 !important;
+    margin-bottom: 24px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: var(--z-text) !important;
+}
+
+/* Form hide-border sections — no border */
+.form-section.hide-border {
+    border: none !important;
+}
+
+.form-control,
+.input-with-feedback {
+    background: #FAF9F7 !important;
+    border: 1px solid #E2E0DA !important;
+    border-radius: 8px !important;
+    color: var(--z-text) !important;
+    height: var(--input-height);
+    font-size: 14px;
+    transition: border-color var(--z-motion-fast) ease, box-shadow var(--z-motion-fast) ease;
+}
+
+.form-control:focus {
+    background: var(--z-surface) !important;
+    border-color: #8A7AF0 !important;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.08) !important;
+}
+
+.control-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--z-text-secondary);
+    margin-bottom: 4px;
+}
+
+.reqd {
+    color: var(--z-danger) !important;
+    font-size: 10px;
+}
+
+/* Like/Attach/Comment toolbar */
+.form-footer {
+    background: transparent !important;
+    border-top: 1px solid var(--z-border) !important;
+}
+
+/* Widget group (below form) */
+.widget-group {
+    background: transparent !important;
+}
+
+.widget {
+    background: var(--z-surface) !important;
+    border: 1px solid var(--z-border-subtle) !important;
+    border-radius: var(--z-radius-card) !important;
+    box-shadow: none !important;
+}
+
+.widget-head {
+    border-bottom: none !important;
+}
+
+/* ==========================================================================
+   10. CARDS & SURFACES (Frappe defaults)
+   ========================================================================== */
+
+.frappe-card {
+    background: var(--z-surface) !important;
+    border: 1px solid var(--z-border-subtle) !important;
+    border-radius: var(--z-radius-card) !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   11. DIALOGS
+   ========================================================================== */
+
+.modal-content {
+    border-radius: var(--z-radius-dialog) !important;
+    box-shadow: var(--z-shadow-dialog) !important;
+    border: none !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--z-border) !important;
+    background: var(--z-surface) !important;
+    border-radius: var(--z-radius-dialog) var(--z-radius-dialog) 0 0 !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--z-border) !important;
+    background: var(--z-surface-soft) !important;
+    border-radius: 0 0 var(--z-radius-dialog) var(--z-radius-dialog) !important;
+}
+
+/* ==========================================================================
+   12. AI PANEL
+   ========================================================================== */
+
+.z-glass-ai-panel {
+    position: fixed;
+    top: 0;
+    right: -480px;
+    width: 480px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.96);
+    border-left: 1px solid #E6E3DD;
+    backdrop-filter: blur(12px);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.04);
+    z-index: 9999;
+    transition: right var(--z-motion-drawer) cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.z-glass-ai-panel.open {
+    right: 0;
+}
+
+.z-glass-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--z-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.z-glass-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--z-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.z-glass-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 24px;
+}
+
+.z-glass-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--z-border);
+    position: relative;
+}
+
+.z-glass-context {
+    background: var(--z-surface-soft);
+    border: 1px solid var(--z-border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--z-text);
+}
+
+.z-glass-chip {
+    display: inline-flex;
+    align-items: center;
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    color: var(--z-text-secondary);
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 6px 6px 0;
+    cursor: pointer;
+    transition: all var(--z-motion-fast) ease;
+}
+
+.z-glass-chip:hover {
+    background: var(--z-shell-active);
+    color: var(--z-text);
+    border-color: var(--z-shell-active);
+}
+
+.z-glass-input {
+    width: 100%;
+    background: var(--z-surface);
+    border: 1px solid var(--z-border);
+    border-radius: 8px;
+    padding: 10px 44px 10px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--z-text);
+    box-shadow: none;
+    outline: none;
+}
+
+.z-glass-input:focus {
+    border-color: var(--z-accent);
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.08);
+}
+
+/* ==========================================================================
+   13. RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .layout-main-section {
+        padding: 32px 28px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #z-sidebar {
+        display: none;
+    }
+    .layout-main-section-wrapper {
+        margin-left: 0 !important;
+        padding: 8px !important;
+    }
+    .layout-main-section {
+        border-radius: 16px !important;
+        min-height: calc(100vh - 16px) !important;
+        padding: 20px 16px !important;
+    }
+}

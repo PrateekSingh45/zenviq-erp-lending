@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-09-22 14:20:47.506265",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sequence",
+  "tool_name",
+  "target",
+  "parameters",
+  "before_state",
+  "after_state",
+  "execution_status",
+  "error_message",
+  "rollback_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Sequence"
+  },
+  {
+   "fieldname": "tool_name",
+   "fieldtype": "Data",
+   "label": "Tool Name"
+  },
+  {
+   "fieldname": "target",
+   "fieldtype": "Data",
+   "label": "Target Object"
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Code",
+   "label": "Parameters",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "before_state",
+   "fieldtype": "Code",
+   "label": "Before State",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "after_state",
+   "fieldtype": "Code",
+   "label": "After State",
+   "options": "JSON"
+  },
+  {
+   "fieldname": "execution_status",
+   "fieldtype": "Select",
+   "label": "Execution Status",
+   "options": "Pending\nSuccess\nFailed\nRolled Back"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "rollback_status",
+   "fieldtype": "Select",
+   "label": "Rollback Status",
+   "options": "Not Applicable\nPending\nSuccess\nFailed"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-22 14:36:21.358645",
+ "modified_by": "Administrator",
+ "module": "ZENVIQ AI",
+ "name": "AI Change Operation",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
